@@ -36,7 +36,7 @@ function App() {
             <ScrollBackground />
             <div className="grainy" />
             <Navbar />
-            <main className="relative z-10 flex flex-col items-center w-full pb-24 top-14">
+            <main className="relative z-10 flex flex-col items-center w-full pb-24 pt-14">
               <Hero />
               <TechMarquee />
               

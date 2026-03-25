@@ -1,8 +1,23 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import quizArenaImage from '../assets/quiz-arena-live.png';
+import careermindImage from '../assets/careermind-project.png';
+import examAuthImage from '../assets/exam-auth-project.png';
 
-const projects = [
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  color: string;
+  rotation: number;
+  image: string;
+  github?: string;
+  live?: string;
+}
+
+const projects: Project[] = [
   {
     id: '01',
     title: 'Quiz Arena',
@@ -10,7 +25,7 @@ const projects = [
     description: 'A full-stack competition platform with live leaderboards, timed sessions, and Socket.io integration.',
     color: '#ff4d00',
     rotation: -3,
-    image: '/src/assets/quiz-arena-live.png',
+    image: quizArenaImage,
     github: 'https://github.com/melbinroy97/QuizArena',
     live: 'https://quizzarena-frontend.onrender.com/'
   },
@@ -21,7 +36,7 @@ const projects = [
     description: 'Next-gen AI career discovery platform. Features personalized roadmap generation and intelligent resume building using Google Gemini.',
     color: '#3b82f6',
     rotation: -1,
-    image: '/src/assets/careermind-project.png',
+    image: careermindImage,
     github: 'https://github.com/melbinroy97/CareerMind',
     live: 'https://careermind-lbdl.onrender.com/'
   },
@@ -32,12 +47,12 @@ const projects = [
     description: 'Aadhaar-linked authentication system to prevent exam impersonation. Features QR code-based hall ticket verification and biometric sync.',
     color: '#00e5ff',
     rotation: 2,
-    image: '/src/assets/exam-auth-project.png',
+    image: examAuthImage,
     github: 'https://github.com/melbinroy97/Exam-Impersonation-Detection-System-by-using-QR-code-Scanner'
   }
 ];
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
+function ProjectCard({ project, index }: { project: Project, index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

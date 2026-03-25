@@ -63,25 +63,25 @@ export default function TechMarquee() {
 
         {/* Animated Icons Container (Marquee inside Box) */}
         <div className="relative overflow-hidden py-4 border-y border-white/5">
-          <div className="animate-marquee flex gap-12 group-hover:[animation-play-state:paused] py-2">
+          <div className="animate-marquee flex gap-6 md:gap-12 group-hover:[animation-play-state:paused] py-2">
             {[...techStack, ...techStack].map((tech, idx) => (
               <div 
                 key={idx}
-                className="flex items-center gap-3 group cursor-default shrink-0"
+                className="flex items-center gap-2 md:gap-3 group cursor-default shrink-0"
               >
                 <div 
-                  className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10 transition-all hover:scale-110 hover:border-[color:var(--primary)] hover:bg-white/[0.08]"
+                  className="p-2 md:p-2.5 rounded-xl bg-white/[0.05] border border-white/10 transition-all hover:scale-110 hover:border-[color:var(--primary)] hover:bg-white/[0.08]"
                   style={{ boxShadow: `0 0 15px ${tech.color}15` }}
                 >
                   <tech.icon 
-                    className="w-7 h-7 transition-all" 
+                    className="w-6 h-6 md:w-7 md:h-7 transition-all" 
                     style={{ 
                       color: tech.color,
                       filter: `drop-shadow(0 0 5px ${tech.color}40)` 
                     }} 
                   />
                 </div>
-                <span className="text-[11px] font-bold tracking-widest text-[color:var(--foreground)] opacity-80 group-hover:opacity-100 transition-opacity">{tech.label}</span>
+                <span className="text-[10px] md:text-[11px] font-bold tracking-widest text-[color:var(--foreground)] opacity-80 group-hover:opacity-100 transition-opacity">{tech.label}</span>
               </div>
             ))}
           </div>

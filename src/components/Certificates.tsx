@@ -1,7 +1,16 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, ShieldCheck } from 'lucide-react';
 
-const credentials = [
+interface Credential {
+  title: string;
+  issuer: string;
+  date: string;
+  link: string;
+  color: string;
+  category: string;
+}
+
+const credentials: Credential[] = [
   {
     title: "Placement Training: MERN Stack, DevOPS & Cloud Computing",
     issuer: "Training Program",
@@ -52,7 +61,7 @@ const credentials = [
   }
 ];
 
-function CredentialCard({ cert, index }: { cert: any, index: number }) {
+function CredentialCard({ cert, index }: { cert: Credential, index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
