@@ -116,4 +116,3 @@ Feel free to fork and submit pull requests for any improvements!
 ---
 
 **Built with ❤️ using React + TypeScript + Vite**
-# Trigger deployment
